@@ -1,5 +1,5 @@
 ## Setup
 
-1. Copy `config.push.js` to `config.js`
-2. Replace the API_KEY placeholder with your actual Gemini API key
+1. Create `config.push.js` for API_KEY Placeholder
+2. Replace the actual Gemini API_KEY with a placeholder
 3. Never commit your `config.js` file
