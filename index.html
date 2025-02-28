@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="config.js"></script>
+    <script src="script.js" defer></script>
+    <title>Flashcard</title>
+  </head>
+  <body>
+    <div class="header">
+      <img src="Icons and pic\9145760.png" alt="Flashcard Icon" />
+      AI Flashcards
+    </div>
+    <div class="button-group">
+      <button id="ai-generate" onclick="generateAIQuestions()">
+        Generate AI Questions
+      </button>
+      <input
+        type="file"
+        id="pdf-upload"
+        accept="application/pdf"
+        style="display: none"
+        onchange="handlePDFUpload(event)"
+      />
+      <button
+        id="upload-pdf"
+        onclick="document.getElementById('pdf-upload').click()"
+      >
+        Upload PDF for Questions
+      </button>
+    </div>
+    <br />
+    <div class="container">
+      <div id="topicSelectorContainer"></div>
+      <div id="currentTopic">Topic: Artificial Intelligence</div>
+      <div class="flashcard" id="flashcard"></div>
+      <div class="options" id="options"></div>
+      <br />
+      <button onclick="submitAnswer()">Submit</button>
+      <div class="score" id="score">Score: 0</div>
+      <div class="explanation" id="explanation"></div>
+    </div>
+    <div class="nav-buttons">
+      <button onclick="previousCard()">Previous</button>
+      <button onclick="nextCard()">Next</button>
+    </div>
+  </body>
+</html>
