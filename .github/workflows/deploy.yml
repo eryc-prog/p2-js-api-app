@@ -1,0 +1,33 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install  # Skip if no npm dependencies
+
+      - name: Build the project
+        run: |
+          echo "VITE_API_KEY=${{ secrets.API_KEY }}" > .env  # Inject API key
+          npm run build  # Adjust if using another build step
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages  # Deployment branch
+          folder: dist  # Adjust if your build outputs to another folder
