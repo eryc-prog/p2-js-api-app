@@ -282,7 +282,7 @@ function nextCard() {
 document.addEventListener("DOMContentLoaded", async () => {
   await getAPIKey(); // Fetch API key when app loads
   if (checkConfig()) {
-    TopicSelector();
+    createTopicSelector();
     updateCard();
   }
 });
