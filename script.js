@@ -104,7 +104,7 @@ Answer: [Exact text of correct answer]`;
 document.addEventListener("DOMContentLoaded", async () => {
   await getAPIKey(); // Fetch API key when app loads
   if (checkConfig()) {
-    createTopicSelector();
+    // createTopicSelector();
     updateCard();
   }
 });
